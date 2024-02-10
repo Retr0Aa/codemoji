@@ -4,92 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Emoji</title>
-    <style>
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(11, 30px);
-            grid-gap: 5px;
-        }
+    <title>Emoji Painting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
 
-        label {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        button {
-            font-size: 20px;
-        }
-
-        #finalTextArea {
-            width: 187px;
-            height: 191px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <h1>Retr0A's Emoji Drawer</h1>
+
+    <label>Canvas Size</label>
+    <input type="number" id="canvasSizeInput">
+    <p style="font-size: small;"><i>*Some places where you want to paste the final painting could be smaller then the desired size of the canvas, and this can lead to unexpected text.</i></p>
+
+    <br>
 
     <div class="grid" id="gridContainer"></div>
 
-    <button onclick="setCurrentEmoji('⬜')">⬜</button>
-    <button onclick="setCurrentEmoji('⬛')">⬛</button>
-    <button onclick="setCurrentEmoji('🟥')">🟥</button>
-    <button onclick="setCurrentEmoji('🟧')">🟧</button>
-    <button onclick="setCurrentEmoji('🟨')">🟨</button>
-    <button onclick="setCurrentEmoji('🟩')">🟩</button>
-    <button onclick="setCurrentEmoji('🟦')">🟦</button>
-    <button onclick="setCurrentEmoji('🟫')">🟫</button>
-    <button onclick="setCurrentEmoji('🟪')">🟪</button>
-    <button onclick="setCurrentEmoji('❤️')">❤️</button>
-    <button onclick="setCurrentEmoji('🥰')">🥰</button>
-    <button onclick="setCurrentEmoji('🎉')">🎉</button>
-    <button onclick="setCurrentEmoji('👍')">👍</button>
+    <br>
 
-    <textarea id="finalTextArea" rows="10" cols="21">sdsd</textarea>
+    <button class="emoji-btn" onclick="setCurrentEmoji('⬜')">⬜</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('⬛')">⬛</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟥')">🟥</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟧')">🟧</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟨')">🟨</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟩')">🟩</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟦')">🟦</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟫')">🟫</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🟪')">🟪</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('❤️')">❤️</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🥰')">🥰</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('🎉')">🎉</button>
+    <button class="emoji-btn" onclick="setCurrentEmoji('👍')">👍</button>
+    
+    <br><br>
 
-    <script>
-        let selEmoji = '⬛';
-        let finalText = 'empty';
+    <button onclick="copyToClipboard()">Copy to clipboard</button>
 
-        // Create a 10x10 grid
-        const gridContainer = document.getElementById('gridContainer');
-        for (let i = 0; i < 11; i++) {
-            for (let j = 0; j < 10; j++) {
-                const label = document.createElement('label');
-                label.innerText = '❤️';
-                label.id = 'label-' + (i * 10 + j);
-                label.addEventListener('click', () => changeHeartValue(label));
-                gridContainer.appendChild(label);
-            }
-        }
-
-        function changeHeartValue(label) {
-            label.innerHTML = selEmoji;
-
-            refreshInputArea();
-        }
-
-        function setCurrentEmoji(emoji) {
-            selEmoji = emoji;
-        }
-
-        function refreshInputArea() {
-            finalText = ''; // Clear the previous content
-            for (let i = 0; i < 11; i++) {
-                for (let j = 0; j < 10; j++) {
-                    finalText += document.getElementById('label-' + (i * 10 + j)).innerText;
-                }
-            }
-            const finalTextArea = document.getElementById('finalTextArea');
-            finalTextArea.value = finalText; // Use value property instead of innerText
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

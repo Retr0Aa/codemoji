@@ -1,0 +1,44 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(11, 30px);
+    grid-gap: 5px;
+}
+
+.emoji-label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-family: "Noto Color Emoji", sans-serif;
+}
+
+button {
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 2px gray;
+}
+
+button:hover {
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 2px gray;
+    background-color: gray;
+    color: white;
+}
+
+.emoji-btn {
+    background-color: lightgrey;
+    font-family: "Noto Color Emoji", sans-serif;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 20px;
+    padding-right: 30px;
+}
