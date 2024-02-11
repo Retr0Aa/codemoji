@@ -19,18 +19,60 @@ body {
     font-family: "Noto Color Emoji", sans-serif;
 }
 
+fieldset {
+    border: solid 2px lightgray;
+    border-radius: 10px;
+}
+
 button {
-    font-size: 20px;
-    border-radius: 5px;
-    border: solid 2px gray;
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
 }
 
 button:hover {
-    font-size: 20px;
-    border-radius: 5px;
-    border: solid 2px gray;
-    background-color: gray;
-    color: white;
+  background-color: #2c974b;
+}
+
+button:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+button:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+button:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
 .emoji-btn {
@@ -41,4 +83,8 @@ button:hover {
     text-align: center;
     line-height: 20px;
     padding-right: 30px;
+}
+
+.emoji-btn:hover {
+    background-color: rgb(189, 189, 189);
 }

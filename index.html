@@ -15,9 +15,14 @@
 <body>
     <h1>Retr0A's Emoji Drawer</h1>
 
-    <label>Canvas Size</label>
-    <input type="number" id="canvasSizeInput">
-    <p style="font-size: small;"><i>*Some places where you want to paste the final painting could be smaller then the desired size of the canvas, and this can lead to unexpected text.</i></p>
+    <fieldset>
+        <legend>Options</legend>
+        <label>Canvas Size</label>
+        <input type="number" id="canvasSizeInput">
+        <p style="font-size: small;"><i>*Some places where you want to paste the final painting could be smaller then the desired size of the canvas, and this can lead to unexpected text.</i></p>
+
+        <button onclick="clearCanvas()">Clear canvas with selected emoji</button>
+    </fieldset>
 
     <br>
 
@@ -38,7 +43,7 @@
     <button class="emoji-btn" onclick="setCurrentEmoji('🥰')">🥰</button>
     <button class="emoji-btn" onclick="setCurrentEmoji('🎉')">🎉</button>
     <button class="emoji-btn" onclick="setCurrentEmoji('👍')">👍</button>
-    
+
     <br><br>
 
     <button onclick="copyToClipboard()">Copy to clipboard</button>

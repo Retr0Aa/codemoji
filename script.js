@@ -7,10 +7,10 @@ const canvasSizeInput = document.getElementById("canvasSizeInput");
 canvasSizeInput.addEventListener('change', setCanvasSize);
 canvasSizeInput.value = canvasSize;
 
-refreshCanvas();
+refreshCanvas('⬜');
 refreshInputArea();
 
-function refreshCanvas() {
+function refreshCanvas(clearEmoji) {
     // Create a 10x10 grid
     const gridContainer = document.getElementById('gridContainer');
 
@@ -24,7 +24,7 @@ function refreshCanvas() {
     for (let i = 0; i < canvasSize; i++) {
         for (let j = 0; j < canvasSize; j++) {
             const label = document.createElement('label');
-            label.innerText = '⬜';
+            label.innerText = clearEmoji;
             label.id = 'label-' + (i * canvasSize + j);
             label.className = "emoji-label";
             label.addEventListener('click', () => changeHeartValue(label));
@@ -59,7 +59,9 @@ function refreshInputArea() {
 
 function setCanvasSize() {
     canvasSize = this.value;
+}
 
-    refreshCanvas();
+function clearCanvas() {
+    refreshCanvas(selEmoji);
     refreshInputArea();
 }
